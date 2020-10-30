@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper black text-darken-2">
+          <a href="#" class="brand-logo right">CS Reddit</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="/">Programming</a></li>
+            <li><a href="/cd">Coding Interview</a></li>
+            <li><a href="/Algorithms">Algorithms</a></li>
+            <li><a href="/cs">Computer Science</a></li>
+            <li><a href="/cs">Computer Science Interview Question</a></li>
+            <li><a href="/cs">JavaScript</a></li>
+          </ul>
+        </div>
+      </nav> 
+    </header>
+    <main>
+      <div class="container">
+        <div class="fixed-action-btn">
+          <a class="btn-floating btn-large black">
+            <i class="large material-icons">...</i>
+          </a>
+          <ul>
+            <li><a class="btn-floating red"><i class="material-icons"><small>New</small></i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons"><small>Hot</small></i></a></li>
+          </ul>
+        </div>      
+        <ul class="collection">
+        <% data.forEach(function(d) { %>
+        <li class="collection-item">
+        <a class="header" href="<%=d.url%>"> <%= d.title %> </a>
+        </li>
+        <% }); %>
+        </ul>
+      </div>
+    </main>
+    <footer class="page-footer black text-darken-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">CS Reddit</h5>
+            <p class="grey-text text-lighten-4">Read from various Computer Science subreddits from Reddit <small>Front page of the internet</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        For any queries or issues, please PM <a href="https://github.com/vikramnr">@vikramnr</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left'
+    });
+  });
+
+  </script>
+</html>
