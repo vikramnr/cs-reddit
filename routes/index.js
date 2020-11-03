@@ -33,4 +33,10 @@ router.get('/csinit',async (req, res, next) =>{
   res.render('index', { title: 'CS Interview Question', data });
 });
 
+router.get('/js',async (req, res, next) =>{
+  let response = await axios.get('https://old.reddit.com/r/javascript.json')
+  let data = response.data.data.children.map(c => c.data)
+  res.render('index', { title: 'JavaScript', data });
+});
+
 module.exports = router;
